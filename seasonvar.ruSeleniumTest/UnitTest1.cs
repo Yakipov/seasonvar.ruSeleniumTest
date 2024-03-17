@@ -8,8 +8,8 @@ namespace seasonvar.ruSeleniumTest
 {
     public class Tests
     {
-        // Объявление переменной driver для управления веб-браузером
-        static IWebDriver driver; // Делаем ее статической, для продолжения тест2 
+        // Declaring the driver variable to control the web browser
+        static IWebDriver driver; // Let's make it static to continue with test2. 
 
         string Login = "yakipov.aset@gmail.com";
         string Password = "MLN0115QWErt";
@@ -17,10 +17,10 @@ namespace seasonvar.ruSeleniumTest
         [SetUp]
         public void Setup()
         {
-            // Проверяем, был ли уже инициализирован экземпляр браузера
+            // Checking if a browser instance has already been initialized
             if (driver == null)
             {
-                // Инициализация драйвера 
+                // Driver initialization 
                 driver = new ChromeDriver();
             }
             
