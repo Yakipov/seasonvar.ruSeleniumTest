@@ -29,35 +29,35 @@ namespace seasonvar.ruSeleniumTest
         [Test]
         public void TestPart1_LoginAndCheckUser()
         {
-            // Открытие сайта 
+            // Opening the site 
             driver.Navigate().GoToUrl("http://seasonvar.ru/");
-            // Максимальное окно браузера 
+            // Maximum browser window
             driver.Manage().Window.Maximize();
 
 
-            // Находим кнопку входа и кликаем по ней
+            // Find the login button and click on it.
             IWebElement signInButton = driver.FindElement(By.XPath("//a[@href = '/?mod=login']"));
             signInButton.Click();
 
-            // Создание объекта WebDriverWait для ожидания появления элементов на странице.
+            // Create a WebDriverWait object to wait for elements to appear on the page.
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             IWebElement element = wait.Until(driver => driver.FindElement(By.XPath("//input[@placeholder='E-mail']")));
 
-            // Находим поле ввода логина и вводим логин.
+            // Find the login input field and enter your login.
             IWebElement loginField = driver.FindElement(By.XPath("//input[@placeholder='E-mail']"));
             loginField.Click();
             loginField.SendKeys(Login);
 
-            // Находим поле ввода пароля и вводим пароль.
+            // Find the password entry field and enter the password.
             IWebElement passwordField = driver.FindElement(By.XPath("//input[@type='password']"));
             passwordField.Click();
             passwordField.SendKeys(Password);
 
-            // Находим кнопку входа и кликаем по ней.
+            // Find the login button and click on it.
             IWebElement loginButton = driver.FindElement(By.XPath("//button[@type='submit' and @class='btn']"));
             loginButton.Click();
 
-            // Ожидание появления элемента с именем пользователя после входа.
+            // Waiting for the username element to appear after login.
             IWebElement usernameElement = wait.Until(driver => driver.FindElement(By.XPath("//li[@class='headmenu-title']")));
             Assert.IsNotNull(usernameElement, "Элемент с именем пользователя не найден. Вход не выполнен.");
         }
@@ -65,18 +65,18 @@ namespace seasonvar.ruSeleniumTest
         [Test]
         public void TestPart2_CheckPopupMenu() 
         {
-            // Создание объекта WebDriverWait для ожидания
+            // Creating a WebDriverWait object to wait
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             // Создаем экземпляр класса Actions
             Actions actions = new Actions(driver);
 
-            // Находим кнопку меню и кликаем по ней.
+            // Find the menu button and click on it.
             IWebElement menuButton = driver.FindElement(By.XPath("//button[@type='submit' and @data-menu='head']"));
             menuButton.Click();
-            // Кликаем на кнопку меню с помощью метода Click
+            // Click on the menu button using the Click method
             actions.Click(menuButton).Perform();
 
-            // Находим Премиум аккаунт в меню и кликаем по ней.
+            // Find Premium Account in the menu and click on it.
             IWebElement premiumAccButton = driver.FindElement(By.XPath("//a[@href='/premium']"));
             premiumAccButton.Click();
             
