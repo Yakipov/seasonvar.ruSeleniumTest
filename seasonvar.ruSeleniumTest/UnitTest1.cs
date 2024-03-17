@@ -67,7 +67,7 @@ namespace seasonvar.ruSeleniumTest
         {
             // Creating a WebDriverWait object to wait
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            // Создаем экземпляр класса Actions
+            // Create an instance of the Actions class
             Actions actions = new Actions(driver);
 
             // Find the menu button and click on it.
