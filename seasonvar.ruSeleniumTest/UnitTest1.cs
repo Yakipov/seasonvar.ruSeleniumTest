@@ -59,7 +59,7 @@ namespace seasonvar.ruSeleniumTest
 
             // Waiting for the username element to appear after login.
             IWebElement usernameElement = wait.Until(driver => driver.FindElement(By.XPath("//li[@class='headmenu-title']")));
-            Assert.IsNotNull(usernameElement, "Ёлемент с именем пользовател€ не найден. ¬ход не выполнен.");
+            Assert.IsNotNull(usernameElement, "Username element not found. Login failed.");
         }
 
         [Test]
@@ -67,7 +67,7 @@ namespace seasonvar.ruSeleniumTest
         {
             // Creating a WebDriverWait object to wait
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            // —оздаем экземпл€р класса Actions
+            // Create an instance of the Actions class
             Actions actions = new Actions(driver);
 
             // Find the menu button and click on it.
