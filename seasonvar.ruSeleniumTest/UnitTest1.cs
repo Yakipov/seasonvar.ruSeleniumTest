@@ -16,8 +16,8 @@ namespace seasonvar.ruSeleniumTest
         static IWebDriver driver;
 
         // Please provide valid login credentials for the website http://seasonvar.ru/
-        string Login = "yakipov.aset@gmail.com"; // Replace existing 
-        string Password = "MLN0115QWErt"; // Replace existing 
+        string Login = "E-mail"; // Replace existing 
+        string Password = "Password"; // Replace existing 
 
         [SetUp]
         public void Setup()
